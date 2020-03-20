@@ -52,12 +52,12 @@
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin # modify if you need
 
-DAEMON_ARGS="/home/pi/0_PublicHub/0_GIT/mqtt-aws-forwarder/mqttEcho.js -c /home/pi/0_PublicHub/0_GIT/CONFIG/mqttEcho/config.json"               # path to your node.js server/app
+DAEMON_ARGS="/home/pi/0_PublicHub/0_GIT/mqttEcho/mqttEcho.js -c /home/pi/0_PublicHub/0_GIT/CONFIG/mqttEcho/config.json"               # path to your node.js server/app
                                             # NB: don't use ~/ in path
 
-DESC="Mqtt things data to AWS forwarder"    # whatever fancy description you like
+DESC="Mqtt echo republish mqtt topic"       # whatever fancy description you like
 
-NODEUSER=root:root	                        # USER who OWNS the daemon process (no matter whoever runs the init script)
+NODEUSER=root:root	                    # USER who OWNS the daemon process (no matter whoever runs the init script)
                                             # user:group (if no group is specified, the primary GID for that user is used)
 
 LOCAL_VAR_RUN=var/run            			# in case the init script is run by non-root user, you need to
@@ -129,7 +129,7 @@ do_start()
 	arg1="1> $APPLOG_FILE"  
 	arg2="2> $ERRLOG_FILE" 
 	
-	# Return
+	# Return:
 	#   0 if daemon has been started
 	#   1 if daemon was already running
 	#   2 if daemon could not be started
