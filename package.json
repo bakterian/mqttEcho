@@ -6,7 +6,7 @@
   "dependencies": {
     "argparse": "^1.0.10",
     "fs": "0.0.1-security",
-    "mqtt": "^2.15.1"
+    "mqtt": "^4.3.7"
   },
   "devDependencies": {},
   "scripts": {
